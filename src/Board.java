@@ -19,9 +19,11 @@ public class Board extends JPanel implements ActionListener{  // Game Board
     int apple_x;
     int apple_y;
 
+    static int highScore=0;  // for storing high score
+
     Image head,body,apple;
     Timer timer;
-    int DELAY=100;  // snake speed
+    int DELAY;  // snake speed
 
     boolean leftDirection=true;
     boolean rightDirection=false;
@@ -29,6 +31,7 @@ public class Board extends JPanel implements ActionListener{  // Game Board
     boolean downDirection=false;
 
     boolean inGame=true;
+    private JButton restartButton;
 
 
     Board(){                // board constructor
@@ -44,6 +47,7 @@ public class Board extends JPanel implements ActionListener{  // Game Board
 
     public void initGame(){     // in game properties
         curr_dots=3;
+        DELAY=100;
 
         // initializing position of snake at start
         for(int i=0;i<curr_dots;i++){
@@ -58,17 +62,17 @@ public class Board extends JPanel implements ActionListener{  // Game Board
 
     }
 
-        //    load image from resource folder to image object
-        public  void loadImages(){
-            ImageIcon bodyIcon = new ImageIcon("src/resources/dot.png"); // loading image from resource
-            body = bodyIcon.getImage(); // getting and storing the image as image object
-            ImageIcon headIcon = new ImageIcon("src/resources/head.png");
-            head = headIcon.getImage();
-            ImageIcon appleIcon = new ImageIcon("src/resources/apple.png");
-            apple = appleIcon.getImage();
-        }
+    //    load image from resource folder to image object
+    public  void loadImages(){
+        ImageIcon bodyIcon = new ImageIcon("src/resources/dot.png"); // loading image from resource
+        body = bodyIcon.getImage(); // getting and storing the image as image object
+        ImageIcon headIcon = new ImageIcon("src/resources/head.png");
+        head = headIcon.getImage();
+        ImageIcon appleIcon = new ImageIcon("src/resources/apple.png");
+        apple = appleIcon.getImage();
+    }
 
-        // draw images at snake's and apple's position
+    // draw images at snake's and apple's position
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -92,6 +96,17 @@ public class Board extends JPanel implements ActionListener{  // Game Board
             timer.stop();
         }
     }
+
+    // creating restart button function
+    public void createRestartButton() {
+        restartButton = new JButton("Restart");
+        restartButton.setSize(100, 40);
+        restartButton.setLocation((b_width - restartButton.getWidth()) / 2, 5 * b_height / 7);
+        restartButton.setBackground(Color.CYAN);
+        add(restartButton);
+    }
+
+
 
     // Randomize apple's position
     public void locateApple(){
@@ -129,7 +144,9 @@ public class Board extends JPanel implements ActionListener{  // Game Board
     public void gameOver(Graphics g){
         String msg="Game Over";
         int score = (curr_dots-3)*10;
-        String scoreMsg = "Score : "+Integer.toString(score);
+        highScore=Math.max(score,highScore);
+        String scoreMsg = "Score : "+score;
+        String highScoreMsg = "High Score : "+highScore;
         Font med = new Font("Helvetica",Font.BOLD,40);
         Font small = new Font("Helvetica",Font.BOLD,18);
         FontMetrics fontMetrics2=getFontMetrics(med);
@@ -137,12 +154,28 @@ public class Board extends JPanel implements ActionListener{  // Game Board
 
         g.setColor(Color.red);
         g.setFont(med);
-        g.drawString(msg,(b_width-fontMetrics2.stringWidth(msg))/2,b_height/4);
-        g.setColor(Color.white);
+        g.drawString(msg,(b_width-fontMetrics2.stringWidth(msg))/2,2*b_height/7); // for game over msg
+        g.setColor(Color.yellow);
         g.setFont(small);
-        g.drawString(scoreMsg,(b_width-fontMetrics.stringWidth(scoreMsg))/2,b_height/2);
-    }
+        g.drawString(highScoreMsg,(b_width-fontMetrics.stringWidth(highScoreMsg))/2,3*b_height/7); // for high score msg
+        g.setColor(Color.white);
+        g.drawString(scoreMsg,(b_width-fontMetrics.stringWidth(scoreMsg))/2,4*b_height/7); // for score msg
 
+
+        createRestartButton();
+        restartButton.addActionListener(e -> {
+            remove(restartButton);
+            inGame=true;
+            leftDirection = true;
+            rightDirection = false;
+            upDirection = false;
+            downDirection = false;
+            initGame();
+            loadImages();
+            repaint();
+        });
+
+    }
     @Override
     public void actionPerformed(ActionEvent actionEvent){
         if(inGame) {
@@ -212,3 +245,4 @@ public class Board extends JPanel implements ActionListener{  // Game Board
 
 
 }
+
