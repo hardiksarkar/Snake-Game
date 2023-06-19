@@ -2,7 +2,8 @@ import javax.swing.*;   // importing java swing whole package
 
 public class SnakeGame extends JFrame{  // Main Window for the game
 
-    Board board;        // declaring Board reference
+    Board board;
+    // declaring Board reference
     SnakeGame(){        // snake game constructor
         board=new Board();      // creating board object
         add(board);     // adding board within the snake game window frame
