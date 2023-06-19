@@ -1,4 +1,4 @@
-### Snake Game
+# Snake Game
 
 Welcome to the Snake Game! This classic game is implemented in Java using Java Swing for the graphical user interface.
 
