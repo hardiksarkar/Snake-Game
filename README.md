@@ -23,9 +23,9 @@ The objective of the game is to control the snake, represented by a series of co
 
 Here are some screenshots showcasing the gameplay and user interface of the Snake Game:
 
-![Screenshot 1](https://drive.google.com/uc?export=view&id=18d5BcMJ5gTozn7I5Ipob7I79haX22hI4)
+![Screenshot 1](https://drive.google.com/uc?export=view&id=1dKY6_ckX4G88XxDtojLxYp4PFV-ORg84)
 
-![Screenshot 2](https://drive.google.com/uc?export=view&id=1dKY6_ckX4G88XxDtojLxYp4PFV-ORg84)
+![Screenshot 2](https://drive.google.com/uc?export=view&id=18d5BcMJ5gTozn7I5Ipob7I79haX22hI4)
 
 ![Screenshot 3](https://drive.google.com/uc?export=view&id=1rt2PmsXRkOmKatZLnpSS04jWyT6WvBJK)
 
