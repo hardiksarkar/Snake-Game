@@ -13,7 +13,8 @@ The objective of the game is to control the snake, represented by a series of co
 3. Guide the snake to eat apples by moving it over them.
 4. Avoid colliding with the snake's own body.
 5. As the snake eats apples, it grows longer, increasing the challenge.
-6. Keep playing to achieve a high score by eating as many apples as possible.
+6. If the game is over, click the "Restart" button to play again.
+7. Keep playing to achieve a high score by eating as many apples as possible.
 
 ## Technologies Used
 
