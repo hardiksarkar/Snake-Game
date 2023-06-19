@@ -1,3 +1,7 @@
+### Snake Game
+
+Welcome to the Snake Game! This classic game is implemented in Java using Java Swing for the graphical user interface.
+
 ## Gameplay
 
 The objective of the game is to control the snake, represented by a series of connected blocks, and guide it to eat apples while avoiding collisions with its own body. The snake grows longer with each apple it eats, making it progressively challenging to maneuver. The game continues indefinitely, allowing the snake to pass through boundaries and reappear on the opposite side.
@@ -11,13 +15,18 @@ The objective of the game is to control the snake, represented by a series of co
 5. As the snake eats apples, it grows longer, increasing the challenge.
 6. Keep playing to achieve a high score by eating as many apples as possible.
 
+## Technologies Used
+
+- Java
+- Object-Oriented Programming (OOP) principles
+- Java Swing for the GUI
+
 ## Functionalities
 
-- Snake Movement: Control the snake's movement using the arrow keys on your keyboard.
-- Apple Collection: Guide the snake to eat apples on the game board to increase its length and score.
-- Collision Detection: The game detects collisions between the snake's head and body, triggering the game over condition.
-- Scoring: Keep track of your score based on the number of apples eaten.
-- Continuous Gameplay: The game allows the snake to pass through boundaries and reappear on the opposite side, creating a continuous playing experience.
+- Snake Movement: Control the snake's movement using the arrow keys (up, down, left, right).
+- Apple Consumption: The snake grows longer and scores points when it eats an apple.
+- Game Over and Restart: If the snake collides with its own body, the game is over. You can restart the game by clicking the "Restart" button.
+- High Score Tracker: The game keeps track of the highest score achieved during gameplay.
 
 ## Screenshots
 
