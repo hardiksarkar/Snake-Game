@@ -32,4 +32,4 @@ Here are some screenshots showcasing the gameplay and user interface of the Snak
 
 ## Thank You for Playing!
 
-We hope you enjoy playing the Snake Game! Challenge yourself to achieve a high score and demonstrate your skills in maneuvering the snake. If you have any feedback or suggestions, feel free to share them with us.
+We hope you enjoy playing the Snake Game! Challenge yourself to achieve a high score and demonstrate your skills in maneuvering the snake. If you have any feedback or suggestions, feel free to share them with me.
